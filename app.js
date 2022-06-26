@@ -23,7 +23,7 @@ http.createServer((req , res) => {
                     connectionLimit: 5,
                     host: "localhost",
                     user: "root",
-                    password: "",
+                    password: "Root#321@",
                     database: "mydatabase"
                 });
         
