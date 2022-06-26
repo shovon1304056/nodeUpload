@@ -30,7 +30,7 @@ http.createServer((req , res) => {
                 // This is for Pool connect
                 connectionMySQL.getConnection(function (err, connection) {
                     if (err) {
-                        connection.release();
+                        
                         return res.end(JSON.stringify({
                             "message": "Connection create fail",
                             "error": err,
@@ -38,7 +38,7 @@ http.createServer((req , res) => {
                         }));
                     }
         
-                    connection.release();
+                    
                     return res.end(JSON.stringify({
                         "message": "Connection create success ",
                         "api v": 1,
@@ -83,6 +83,6 @@ http.createServer((req , res) => {
 
     }
 
-}).listen(3000) ;
+}).listen(80) ;
 
-console.log(`Routing Server is Run now (port 3000) ..............`);
+console.log(`Routing Server is Run now (port 80) ..............`);
