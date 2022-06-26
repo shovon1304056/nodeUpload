@@ -16,17 +16,17 @@ http.createServer((req , res) => {
         
     } else if (req.url.toLowerCase() === '/connection_check') {
       
-        return res.end(JSON.stringify({
-            "message": "Connection create success ",
-            "api v": 1
-        }));
+        // return res.end(JSON.stringify({
+        //     "message": "Connection create success ",
+        //     "api v": 1
+        // }));
             try {
 
                 console.log("yes");
                 const connectionMySQL = mysql.createPool({
                     connectionLimit: 5,
                     host: "localhost",
-                    user: "root",
+                    user: "shovon",
                     password: "Root#321@",
                     database: "mydatabase"
                 });
