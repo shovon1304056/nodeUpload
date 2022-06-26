@@ -16,7 +16,10 @@ http.createServer((req , res) => {
         
     } else if (req.url.toLowerCase() === '/connection_check') {
       
-
+        return res.end(JSON.stringify({
+            "message": "Connection create success ",
+            "api v": 1
+        }));
             try {
 
                 console.log("yes");
