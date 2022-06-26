@@ -19,6 +19,7 @@ http.createServer((req , res) => {
 
             try {
 
+                console.log("yes");
                 const connectionMySQL = mysql.createPool({
                     connectionLimit: 5,
                     host: "localhost",
@@ -30,6 +31,7 @@ http.createServer((req , res) => {
                 // This is for Pool connect
                 connectionMySQL.getConnection(function (err, connection) {
                     if (err) {
+                        console.log(err);
                         connection.release();
                         return res.end(JSON.stringify({
                             "message": "Connection create fail",
@@ -50,6 +52,7 @@ http.createServer((req , res) => {
         
                
             } catch (error) {
+                console.log(error);
                 return res.end(JSON.stringify({
                     "status": 404,
                     "message": "Connection create fail try",
